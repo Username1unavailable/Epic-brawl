@@ -1,6 +1,6 @@
 extends Node2D
 
-const GRAVITY = 5
+const GRAVITY = 20
 const MAX_SPEED = 150
 const ACCELERATION = 50
 const JUMP_HEIGHT = -200

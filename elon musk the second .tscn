@@ -28,7 +28,7 @@ position = Vector2( -50, 0 )
 script = ExtResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="Player/Node2D"]
-position = Vector2( -62, -4 )
+position = Vector2( 114, 1 )
 
 [node name="Sprite" type="Sprite" parent="Player/Node2D"]
 position = Vector2( 3, 3 )
