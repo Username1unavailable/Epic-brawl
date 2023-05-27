@@ -1,6 +1,6 @@
 extends Node2D
 var Canparry = true
-var bullet_scene = preload("res://DABULL.tscn")
+var bullet_scene = preload("res://bullet.tscn")
 
 func fire():
 	var bullet = bullet_scene.instance()

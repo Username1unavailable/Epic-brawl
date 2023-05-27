@@ -20,6 +20,7 @@ visible = false
 texture = ExtResource( 2 )
 
 [node name="TargetRay" type="RayCast2D" parent="."]
+visible = false
 enabled = true
 collision_mask = 2
 

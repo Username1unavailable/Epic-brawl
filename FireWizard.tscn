@@ -1,0 +1,248 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://firewiz.gd" type="Script" id=1]
+[ext_resource path="res://light (1).png" type="Texture" id=2]
+[ext_resource path="res://spritesheet (2).png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.5, 28.5 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 42 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayerfire/Light2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -14, -74 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayerfire/Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.16 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationPlayerfire/Light2D:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.992157, 0.678431, 0.141176, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimationPlayerfire/Light2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "blast"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.165709, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 28, 29, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimationPlayerfire/Light2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -14, -74 ), Vector2( -3, -77 ), Vector2( 12, -81 ), Vector2( 35, -80 ), Vector2( 48, -81 ), Vector2( 48, -81 ), Vector2( 41.1111, -80.2222 ), Vector2( 34.2222, -79.4444 ), Vector2( 46, -81 ), Vector2( 43, -80 ), Vector2( 42, -80 ), Vector2( 46, -91 ), Vector2( 37, -98 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimationPlayerfire/Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.4, 0.5, 0.8, 0.9, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.16, 1.32, 1.64, 1.36, 1.01, 0.88 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimationPlayerfire/Light2D:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimationPlayerfire/Light2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "jump"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 60, 61, 62, 63, 64, 65, 66, 67 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "run"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 42, 43, 44, 45, 46, 47, 48, 49 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "sword"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 0.812252 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "walk"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 22, 23, 24, 25, 26, 27 ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="firewiz" type="KinematicBody2D" parent="."]
+position = Vector2( 7, -34 )
+script = ExtResource( 1 )
+
+[node name="fire" type="Sprite" parent="firewiz"]
+texture = ExtResource( 3 )
+hframes = 69
+frame = 42
+
+[node name="col" type="CollisionShape2D" parent="firewiz"]
+position = Vector2( -7, 34 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayerfire" type="AnimationPlayer" parent="firewiz"]
+anims/RESET = SubResource( 2 )
+anims/blast = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/jump = SubResource( 5 )
+anims/run = SubResource( 6 )
+anims/sword = SubResource( 7 )
+anims/walk = SubResource( 8 )
+
+[node name="Light2D" type="Light2D" parent="firewiz/AnimationPlayerfire"]
+position = Vector2( -14, -74 )
+scale = Vector2( 0.5, 0.5 )
+enabled = false
+texture = ExtResource( 2 )
+color = Color( 0.992157, 0.678431, 0.141176, 1 )
+energy = 1.16
