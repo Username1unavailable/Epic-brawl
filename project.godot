@@ -27,8 +27,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Grapple Swing"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://MenuScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+gamestate="*res://gamestate.tscn"
 
 [gui]
 
