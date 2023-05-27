@@ -1,7 +1,6 @@
 extends Node2D
 var Canparry = true
-var bullet_scene = preload("res://bullet.tscn")
-onready var node = get_node("/root/Node2D/KinematicBody2D/AnimationPlayer")
+var bullet_scene = preload("res://DABULL.tscn")
 
 func fire():
 	var bullet = bullet_scene.instance()

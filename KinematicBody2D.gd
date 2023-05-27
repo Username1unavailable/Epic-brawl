@@ -20,7 +20,7 @@ var velocity = Vector2(0,0)
 #func _ready():
 #	pass
 
-"""
+
 func _physics_process(delta):
 		
 	
@@ -67,6 +67,6 @@ func _physics_process(delta):
 			velocity = move_and_slide(velocity, UP)
 		#if Input.is_action_just_pressed("Two")
 	
-"""
+
 	
 	

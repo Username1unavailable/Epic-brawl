@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33.665, 31.8243 )
@@ -9,6 +10,9 @@ extents = Vector2( 33.665, 31.8243 )
 extents = Vector2( 514.665, 30.869 )
 
 [node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 266, 176 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 266, 176 )
