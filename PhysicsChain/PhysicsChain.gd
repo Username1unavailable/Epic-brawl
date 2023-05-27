@@ -24,7 +24,7 @@ func orbit(center : Vector2) -> void:
 		if rad_force > 0 or Input.is_action_pressed("stiffen_rope"):
 			parent.add_central_force(radius.normalized() * -rad_force)
 	
-	# Restrict radial velocityrad_force
+	# Restrict radial velocity
 	if (parent.linear_velocity.length() * radius.length()) != 0:
 		angle = acos(radius.dot(parent.linear_velocity) / (radius.length() * parent.linear_velocity.length()))
 		var rad_vel = cos(angle) * parent.linear_velocity.length()
@@ -48,8 +48,6 @@ func reel_in(center : Vector2, delta : float) -> void:
 
 func _physics_process(delta: float) -> void:
 	$StateMachine.update(delta)
-	pass
-	
 
 #func _on_Grapple_Angle(angle) -> void:
 #	emit_signal("Angle", angle)

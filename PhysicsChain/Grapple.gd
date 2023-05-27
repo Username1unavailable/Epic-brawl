@@ -20,6 +20,7 @@ func update(delta : float) -> void:
 		for a in anchor_stack:
 			points.insert(2, a.global_position)
 	$Rope.points = PoolVector2Array(points)
+	
 
 
 func input(event: InputEvent) -> void:
