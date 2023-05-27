@@ -15,6 +15,7 @@ extents = Vector2( 33.665, 31.8243 )
 extents = Vector2( 514.665, 30.869 )
 
 [node name="Level" type="Node2D"]
+position = Vector2( -63, -21 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 490, 304 )
