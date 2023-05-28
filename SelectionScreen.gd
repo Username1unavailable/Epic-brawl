@@ -2,13 +2,6 @@ extends Control
 
 var next_scene = preload("res://ConnectionScene.tscn")
 
-enum PLAYER_SELECTION{
-	PLAYER_1,
-	PLAYER_2,
-}
-
-var player_selection = null
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -25,14 +18,20 @@ func _ready():
 
 
 func _on_Button2_pressed():
-	$Label.text = "Player 1 selected"
-	player_selection = PLAYER_SELECTION.PLAYER_1
+	$Label.text = "Elon Musk selected"
+	$"/root/gamestate".player_ty = "Elon"
 	pass # Replace with function body.
 
 
 func _on_Button3_pressed():
-	$Label.text = "Player 2 selected"
-	player_selection = PLAYER_SELECTION.PLAYER_2
+	$Label.text = "Wizard selected"
+	$"/root/gamestate".player_ty = "Wizard"	
+	pass # Replace with function body.
+
+
+func _on_Button4_pressed():
+	$Label.text = "Knight selected"
+	$"/root/gamestate".player_ty = "Knight"	
 	pass # Replace with function body.
 
 
