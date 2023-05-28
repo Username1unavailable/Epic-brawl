@@ -2,9 +2,14 @@ extends Area2D
 var direction = Vector2. RIGHT
 var speed = 400
 
-func _process(delta):
+puppet var puppet_position = Vector2()
 
-	translate(direction.normalized()* speed * delta)
+func _process(delta):
+	if is_network_master():
+		translate(direction.normalized()* speed * delta)
+		rset("puppet_position", position)
+	else:
+		position = puppet_position
 
 
 func _on_DABULL_body_entered(body):

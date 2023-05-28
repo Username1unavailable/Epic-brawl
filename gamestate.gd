@@ -7,17 +7,18 @@ const DEFAULT_PORT = 10567
 var begin_game_scene = preload("res://davidsnettestscene.tscn")
 
 var peer
+var player_ty
 var player_name
 var players = {}
 
 func join_game(ip, name):
-	player_name = name;	
+	player_name = name;
 	peer = NetworkedMultiplayerENet.new()
 	peer.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(peer)
 	
 func host_game(name):
-	player_name = name;	
+	player_name = name;
 	peer = NetworkedMultiplayerENet.new()
 	peer.create_server(DEFAULT_PORT, 2)
 	get_tree().set_network_peer(peer)
@@ -28,7 +29,7 @@ func begin_game():
 	var spawns = []
 	for p in players:
 		spawns.push_back(p)
-	spawns.push_back(get_tree().get_rpc_sender_id())
+	spawns.push_back(get_tree().get_network_unique_id())
 	print(spawns)
 	
 	for p in players:
@@ -42,7 +43,15 @@ remote func pre_start_game(spawns):
 	print(spawns)
 	
 	for player_id in spawns:
-		var player = load("res://PlayerElonMusk.tscn").instance()
+		var scene
+		match player_ty:
+			"Elon":
+				scene = "res://PlayerElonMusk.tscn"
+			"Wizard":
+				scene = "res://shapeshiftingwizard.tscn"
+			"Knight":
+				scene = "res://knight.tscn"
+		var player = load(scene).instance()
 		print("AAA ", player_id)
 
 		player.set_name(str(player_id))

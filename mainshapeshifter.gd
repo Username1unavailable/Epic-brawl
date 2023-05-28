@@ -11,19 +11,23 @@ func _ready():
 	playerPosition = global_transform.origin
 
 func _input(event):
-	if event.is_action_pressed("shape_shift_1"):
-		switch_character(character1)
-	elif event.is_action_pressed("shape_shift_2"):
-		switch_character(character2)
-	elif event.is_action_pressed("shape_shift_3"):
-		switch_character(character3)
-
-func switch_character(newCharacter):
+	if is_network_master():
+		if event.is_action_pressed("shape_shift_1"):
+			rpc("switch_character", "res://actualwizard.tscn")
+			switch_character("res://actualwizard.tscn")
+		elif event.is_action_pressed("shape_shift_2"):
+			rpc("switch_character", "res://FireWizard.tscn")
+			switch_character("res://FireWizard.tscn")
+		elif event.is_action_pressed("shape_shift_3"):
+			rpc("switch_character", "res://witch.tscn")
+			switch_character("res://witch.tscn")
+	
+puppet func switch_character(newCharacter):
 	if currentCharacter:
 		playerPosition = to_local(currentCharacter.global_transform.origin)
 		currentCharacter.queue_free()
 
-	currentCharacter = newCharacter.instance()
+	currentCharacter = load(newCharacter).instance()
 	add_child(currentCharacter)
 
 	currentCharacter.global_transform.origin = to_global(playerPosition)
