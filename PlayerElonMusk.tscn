@@ -10,6 +10,8 @@ extents = Vector2( 22, 11 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 307, 135 )
+z_index = 2
 
 [node name="Node2D" type="Node2D" parent="Player"]
 position = Vector2( -50, 0 )

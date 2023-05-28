@@ -1,12 +1,11 @@
 extends Node
 
-signal connection_suceeded
-
 const DEFAULT_PORT = 10567
 
 var begin_game_scene = preload("res://davidsnettestscene.tscn")
 
 var peer
+var map_ty
 var player_ty
 var player_name
 var players = {}
@@ -39,7 +38,15 @@ func begin_game():
 	
 remote func pre_start_game(spawns):
 	print("running prestart game")
-	var test_scene = load("res://davidsnettestscene.tscn")
+	var map_scene
+	match map_ty:
+		"Twitter":
+			map_scene = "res://TwitterMap.tscn"
+		"Night":
+			map_scene = "res://nightmap.tscn"
+		"Knight":
+			map_scene = "res://knight.tscn"
+	var test_scene = load(map_scene)
 	print(spawns)
 	
 	for player_id in spawns:

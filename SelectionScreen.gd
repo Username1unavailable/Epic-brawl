@@ -32,9 +32,15 @@ func _on_Button3_pressed():
 func _on_Button4_pressed():
 	$Label.text = "Knight selected"
 	$"/root/gamestate".player_ty = "Knight"	
-	pass # Replace with function body.
-
-
-func _on_Button_pressed():
+	
+func _on_MapOne_pressed():
+	$"/root/gamestate".map_ty = "Twitter"
 	get_tree().change_scene_to(next_scene)
-	pass # Replace with function body.
+	
+func _on_MapTwo_pressed():
+	$"/root/gamestate".map_ty = "Night"
+	get_tree().change_scene_to(next_scene)
+	
+func _on_MapThree_pressed():
+	$"/root/gamestate".map_ty = "Knight"
+	get_tree().change_scene_to(next_scene)
